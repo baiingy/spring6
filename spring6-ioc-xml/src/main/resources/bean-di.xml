@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1 set方法注入-->
+    <!--<bean id="bookSet" class="com.bmy.spring6.iocxml.di.Book">
+        <property name="bname" value="读者"></property>
+        <property name="author" value="作者"></property>
+    </bean>-->
+
+    <!--2 构造器注入-->
+    <!--<bean id="bookCon" class="com.bmy.spring6.iocxml.di.Book">
+        <constructor-arg name="bname" value="小王子"></constructor-arg>
+        <constructor-arg name="author" value="zz"></constructor-arg>
+    </bean>-->
+
+    <!--3 特殊值注入-->
+    <bean id="bookSet" class="com.bmy.spring6.iocxml.di.Book">
+        <property name="bname" value="读者"></property>
+        <property name="author" value="作者"></property>
+        <!--空值-->
+        <!--<property name="others">
+            <null></null>
+        </property>-->
+        <!--转义字符-->
+        <property name="others" value="&lt; a,b &gt;">
+<!--            <value><![CDATA[ a < b ]]></value>-->
+        </property>
+    </bean>
+</beans>
