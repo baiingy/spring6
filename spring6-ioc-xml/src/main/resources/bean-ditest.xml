@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--外部 bean 注入-->
+    <bean id="dept" class="com.bmy.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="安保部"></property>
+    </bean>
+    <bean id="emp" class="com.bmy.spring6.iocxml.ditest.Emp">
+        <!--普通属性注入-->
+        <property name="ename" value="lucy"></property>
+        <property name="age" value="28"></property>
+        <!--注入对象类型属性-->
+        <property name="dept" ref="dept"></property>
+    </bean>
+
+    <!--内部 bean 注入-->
+    <bean id="emp2" class="com.bmy.spring6.iocxml.ditest.Emp">
+        <!--普通属性注入-->
+        <property name="ename" value="Tom"></property>
+        <property name="age" value="37"></property>
+        <property name="dept">
+            <bean id="dept2" class="com.bmy.spring6.iocxml.ditest.Dept">
+                <property name="dname" value="财务部"></property>
+            </bean>
+        </property>
+    </bean>
+    <!--级联赋值-->
+    <bean id="dept3" class="com.bmy.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="外联部"></property>
+    </bean>
+    <bean id="emp3" class="com.bmy.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="小红"></property>
+        <property name="age" value="25"></property>
+        <property name="dept" ref="dept3"></property>
+        <property name="dept.dname" value="测试部"></property>
+    </bean>
+
+    <bean>
+
+    </bean>
+
+</beans>

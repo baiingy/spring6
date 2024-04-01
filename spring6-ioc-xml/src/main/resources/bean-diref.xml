@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--p命名空间注入-->
+    <bean id="stup" class="com.bmy.spring6.iocxml.dimap.Student"
+    p:sid="10002" p:sname="话u啊" p:lessions-ref="lessonList" p:teacherMap-ref="teacherMap"></bean>
+    <bean id="stu1" class="com.bmy.spring6.iocxml.dimap.Student">
+        <property name="sid" value="10001"></property>
+        <property name="sname" value="tom"></property>
+        <property name="lessions" ref="lessonList"></property>
+        <property name="teacherMap" ref="teacherMap"></property>
+    </bean>
+    <util:list id="lessonList">
+        <ref bean="lesson1"></ref>
+        <ref bean="lesson2"></ref>
+        <ref bean="lesson3"></ref>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry key="24001">
+            <ref bean="teacher1"></ref>
+        </entry>
+        <entry key="24002">
+            <ref bean="teacher2"></ref>
+        </entry>
+    </util:map>
+    <bean id="teacher1" class="com.bmy.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="001"></property>
+        <property name="tname" value="提那老师"></property>
+    </bean>
+    <bean id="teacher2" class="com.bmy.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="002"></property>
+        <property name="tname" value="艾虎老师"></property>
+    </bean>
+    <bean id="lesson1" class="com.bmy.spring6.iocxml.dimap.Lesson">
+        <property name="lname" value="java"></property>
+    </bean>
+    <bean id="lesson2" class="com.bmy.spring6.iocxml.dimap.Lesson">
+        <property name="lname" value="c++"></property>
+    </bean>
+    <bean id="lesson3" class="com.bmy.spring6.iocxml.dimap.Lesson">
+        <property name="lname" value="c"></property>
+    </bean>
+</beans>
