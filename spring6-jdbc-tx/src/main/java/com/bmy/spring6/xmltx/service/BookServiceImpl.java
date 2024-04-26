@@ -1,6 +1,6 @@
-package com.bmy.spring6.Book.service;
+package com.bmy.spring6.xmltx.service;
 
-import com.bmy.spring6.Book.dao.BookDao;
+import com.bmy.spring6.xmltx.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 //@Transactional(readOnly = true) //只读
 //@Transactional(timeout = 3) //超时
 //@Transactional(noRollbackFor = ArithmeticException.class) //回滚策略
-@Transactional(propagation = Propagation.REQUIRED)
+//@Transactional(propagation = Propagation.REQUIRED)
 public class BookServiceImpl implements BookService {
 
     @Autowired

@@ -16,7 +16,10 @@
         <module>atguigu-spring</module>
         <module>spring6-aop</module>
         <module>spring6-jdbc-tx</module>
-        <module>spring6-jdbc</module>
+        <module>spring6-resources</module>
+        <module>spring6-i18n</module>
+        <module>spring-validator</module>
+        <module>spring6-junit</module>
     </modules>
 
     <properties>
