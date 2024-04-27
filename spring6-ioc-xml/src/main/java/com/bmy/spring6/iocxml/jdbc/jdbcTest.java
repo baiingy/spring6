@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * ClassName:jdbcTest
@@ -16,7 +17,10 @@ public class jdbcTest {
     @Test
     public void test1(){
         ApplicationContext context=new ClassPathXmlApplicationContext("bean-jdbc.xml");
-        DruidDataSource dataSource = context.getBean(DruidDataSource.class);
-        System.out.println(dataSource.getUrl());
+        JdbcTemplate jdbcTemplate = context.getBean(JdbcTemplate.class);
+        String sql = "insert into students (id,name,gender,age,class) values (?,?,?,?,?);";
+        int rows = jdbcTemplate.update(sql, 9,"十一", "男", 18, "二年三班");
+        System.out.println("rows = " + rows);
+
     }
 }

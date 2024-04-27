@@ -15,11 +15,11 @@
         <module>spring6-reflect</module>
         <module>atguigu-spring</module>
         <module>spring6-aop</module>
-        <module>spring6-jdbc-tx</module>
         <module>spring6-resources</module>
         <module>spring6-i18n</module>
         <module>spring-validator</module>
         <module>spring6-junit</module>
+        <module>spring6-tx-annotation</module>
     </modules>
 
     <properties>
@@ -79,6 +79,33 @@
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
+        </dependency>
+
+        <!-- 数据库驱动 和 连接池-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+        <!-- spring-jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+
+        <!-- 声明式事务依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>6.0.6</version>
         </dependency>
 
     </dependencies>
